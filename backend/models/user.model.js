@@ -1,8 +1,6 @@
-const { use } = require("react")
+const mongoose = require("mongoose")
 
-const mongoose = "mongoose"
-
-const userScheam = new mongoose.userScheam({
+const userScheam = new mongoose.Schema({
     name: {
         type: String,
         requied: true
@@ -20,6 +18,10 @@ const userScheam = new mongoose.userScheam({
         type: String,
         enum: ["user", "admin"],
         default: "user"
+    },
+    verified: {
+        type: Boolean,
+        default: false
     }
 })
 
