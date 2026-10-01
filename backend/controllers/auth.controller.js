@@ -8,10 +8,10 @@ const generateToken = (id) => {
 }
 
 async function registerUser(req, res) {
-    const { name, email, password } = req.body
+    const { name, email, password, role } = req.body
 
     try {
-        const existingUser = User.findOne({
+        const existingUser = await User.findOne({
             email
         })
         if (existingUser) {
@@ -26,7 +26,8 @@ async function registerUser(req, res) {
         const user = await User.create({
             name,
             email,
-            password: hash
+            password: hash,
+            role
         })
 
         if (user) {
