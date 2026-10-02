@@ -10,7 +10,7 @@ const router = express.Router()
 router.get("/", productController.getProducts)
 router.post("/", protect, admin, upload.single("image"), productController.createProduct)
 router.get("/:id", productController.getProductById)
-router.put("/:id", protect, admin, updateProduct)
-router.delete("/:id", protect, admin, deleteProduct)
+router.put("/:id", protect, admin, upload.single("image"), productController.updateProduct)
+router.delete("/:id", protect, admin, productController.deleteProduct)
 
 module.exports = router
