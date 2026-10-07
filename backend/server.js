@@ -22,7 +22,7 @@ const port = process.env.PORT || 3000
 
 app.use("/api/auth", authRoute)
 app.use("/api/products", productRoute)
-// app.use("/api/orders/", orderRoutes)
+app.use("/api/orders/", orderRoutes)
 // app.use("/api/payment", paymentRoute)
 // app.use("/api/analytic", analyticsRoutes)
 
